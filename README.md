@@ -1,1 +1,1 @@
-Duels
+Sample
