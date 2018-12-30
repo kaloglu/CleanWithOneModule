@@ -35,6 +35,6 @@ interface ApplicationComponent : AndroidInjector<SampleApp> {
         fun build(): ApplicationComponent
     }
 
-    override fun inject(duelsApp: SampleApp)
+    override fun inject(sampleApp: SampleApp)
 
 }

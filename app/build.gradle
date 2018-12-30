@@ -8,7 +8,7 @@ android {
     buildToolsVersion app.buildTools
 
     defaultConfig {
-        applicationId "com.kaloglu.duels"
+        applicationId "com.kaloglu.sample"
 
         minSdkVersion app.minSdk
         targetSdkVersion app.targetSdk
@@ -43,7 +43,6 @@ android {
 }
 
 dependencies {
-    implementation fileTree(include: ['*.jar'], dir: 'libs')
     addDependencies(dependencies, appDependencies)
 }
 
