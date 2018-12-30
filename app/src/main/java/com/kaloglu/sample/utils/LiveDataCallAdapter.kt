@@ -17,7 +17,7 @@
 package com.kaloglu.sample.utils
 
 
-import android.arch.lifecycle.LiveData
+import androidx.lifecycle.LiveData
 import com.kaloglu.sample.api.ApiResponse
 import retrofit2.Call
 import retrofit2.CallAdapter

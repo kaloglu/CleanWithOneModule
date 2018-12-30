@@ -1,6 +1,6 @@
 package com.kaloglu.sample.navigation
 
-import android.support.v4.app.FragmentManager
+import androidx.fragment.app.FragmentManager
 import com.kaloglu.sample.R
 import com.kaloglu.sample.injection.scopes.PerActivity
 import com.kaloglu.sample.mobileui.base.BaseFragment

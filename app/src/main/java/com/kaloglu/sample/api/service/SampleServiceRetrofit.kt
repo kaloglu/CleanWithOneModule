@@ -1,6 +1,6 @@
 package com.kaloglu.sample.api.service
 
-import android.arch.lifecycle.LiveData
+import androidx.lifecycle.LiveData
 import com.kaloglu.sample.api.ApiResponse
 import com.kaloglu.sample.data.remote.model.SampleModel
 import retrofit2.http.GET

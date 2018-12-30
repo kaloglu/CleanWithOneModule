@@ -16,7 +16,7 @@
 
 package com.kaloglu.sample.data.cache.db
 
-import android.arch.persistence.room.TypeConverter
+import androidx.room.TypeConverter
 import timber.log.Timber
 
 object TypeConverters {

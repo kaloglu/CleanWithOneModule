@@ -2,7 +2,7 @@ package com.kaloglu.sample.mobileui.main
 
 import android.content.Context
 import android.content.Intent
-import android.support.annotation.StringRes
+import androidx.annotation.StringRes
 import com.firebase.ui.auth.AuthUI
 import com.kaloglu.sample.R
 import com.kaloglu.sample.mobileui.base.BaseFragment

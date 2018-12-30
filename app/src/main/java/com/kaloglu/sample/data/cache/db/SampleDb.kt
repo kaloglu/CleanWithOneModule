@@ -17,9 +17,9 @@
 package com.kaloglu.sample.data.cache.db
 
 
-import android.arch.persistence.room.Database
-import android.arch.persistence.room.RoomDatabase
-import android.arch.persistence.room.TypeConverters
+import androidx.room.Database
+import androidx.room.RoomDatabase
+import androidx.room.TypeConverters
 import com.kaloglu.sample.data.cache.sample.SampleDao
 import com.kaloglu.sample.utils.converter.DateConverter
 import com.kaloglu.sample.viewobjects.CachedSample

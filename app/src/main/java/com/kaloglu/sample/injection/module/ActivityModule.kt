@@ -2,8 +2,8 @@ package com.kaloglu.sample.injection.module
 
 import android.app.Activity
 import android.content.Context
-import android.support.v4.app.FragmentManager
-import android.support.v7.app.AppCompatActivity
+import androidx.fragment.app.FragmentManager
+import androidx.appcompat.app.AppCompatActivity
 import com.kaloglu.sample.injection.qualifier.ActivityContext
 import com.kaloglu.sample.injection.scopes.PerActivity
 import com.kaloglu.sample.mobileui.base.BaseActivity
