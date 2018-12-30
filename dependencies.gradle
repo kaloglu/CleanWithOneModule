@@ -39,7 +39,7 @@ def versions = [
 
         archComp            : '2.0.0-rc01',
 
-        dagger              : '2.16',
+        dagger              : '2.20',
 
         retrofit            : '2.3.0',
 
