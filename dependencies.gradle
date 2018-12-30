@@ -55,7 +55,7 @@ def versions = [
 
         firebaseAuth        : '4.2.1',
 
-        rxJava                : '2.0.2',
+        ahBottomNavigation  : '2.3.3',
 
         rxJava              : '2.0.2',
         rxKotlin            : '2.1.0',
@@ -138,8 +138,8 @@ def libraries = [
         firebaseCore       : "com.google.firebase:firebase-core:$versions.firebase",
         firebaseAuth       : "com.firebaseui:firebase-ui-auth:$versions.firebaseAuth",
 
-        //Test
-        assertj            : "org.assertj:assertj-core:$versions.assertJ",
+        //BottomNavigation
+        ahBottomNavigation : "com.aurelhubert:ahbottomnavigation:$versions.ahBottomNavigation",
 
 ]
 
@@ -190,7 +190,7 @@ ext.appDependencies = [
         addDependency('implementation', libraries.firebaseCore),
         addDependency('implementation', libraries.firebaseAuth),
 
-        //TODO: kullanılmazsa silinecek
+        addDependency('implementation', libraries.ahBottomNavigation),
 
         //test debug for room
         addDependency('debugImplementation', 'com.amitshekhar.android:debug-db:1.0.4'),
