@@ -3,8 +3,8 @@ package com.kaloglu.sample.adapter.main
 import android.view.ViewGroup
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
-import com.kaloglu.sample.adapter.demo.DemoFragment
 import com.kaloglu.sample.mobileui.base.BaseFragment
+import com.kaloglu.sample.mobileui.demo.DemoFragment
 import java.util.*
 
 /**
