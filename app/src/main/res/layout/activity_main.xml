@@ -19,7 +19,6 @@
             android:layout_gravity="right|bottom"
             android:layout_marginBottom="88dp"
             android:src="@drawable/ic_add"
-            android:visibility="gone"
             app:useCompatPadding="true"/>
 
     <com.aurelhubert.ahbottomnavigation.AHBottomNavigation

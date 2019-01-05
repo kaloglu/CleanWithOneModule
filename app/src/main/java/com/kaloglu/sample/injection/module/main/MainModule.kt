@@ -1,6 +1,6 @@
 package com.kaloglu.sample.injection.module.main
 
-import com.kaloglu.sample.adapter.demo.DemoFragment
+import com.kaloglu.sample.mobileui.demo.DemoFragment
 import com.kaloglu.sample.data.LocalStorage
 import com.kaloglu.sample.injection.module.ActivityModule
 import com.kaloglu.sample.injection.scopes.PerActivity

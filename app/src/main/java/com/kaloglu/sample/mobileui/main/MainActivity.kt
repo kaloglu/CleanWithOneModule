@@ -11,10 +11,10 @@ import com.aurelhubert.ahbottomnavigation.AHBottomNavigation
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigationAdapter
 import com.aurelhubert.ahbottomnavigation.notification.AHNotification
 import com.kaloglu.sample.R
-import com.kaloglu.sample.adapter.demo.DemoFragment
 import com.kaloglu.sample.adapter.main.ViewPagerAdapter
 import com.kaloglu.sample.mobileui.base.BaseFragment
 import com.kaloglu.sample.mobileui.base.mvp.BaseMvpActivity
+import com.kaloglu.sample.mobileui.demo.DemoFragment
 import com.kaloglu.sample.presentation.interfaces.main.MainContract
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlin.random.Random
@@ -114,7 +114,7 @@ class MainActivity : BaseMvpActivity<Any, MainContract.Presenter>(), MainContrac
             currentFragment = adapter.currentFragment
             currentFragment!!.willBeDisplayed()
 
-            if (position == 1) {
+            if (position == 0) {
 
                 fab.show()
                 fab.alpha = 0f
