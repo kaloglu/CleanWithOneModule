@@ -1,8 +1,8 @@
 package com.kaloglu.sample.firebase
 
+import androidx.annotation.MainThread
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.annotation.MainThread
 import com.kaloglu.sample.api.ApiResponse
 import com.kaloglu.sample.api.ApiSuccessResponse
 import com.kaloglu.sample.data.remote.model.SampleModel

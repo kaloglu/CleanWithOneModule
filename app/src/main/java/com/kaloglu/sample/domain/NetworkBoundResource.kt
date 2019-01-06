@@ -16,10 +16,10 @@
 
 package com.kaloglu.sample.domain
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MediatorLiveData
 import androidx.annotation.MainThread
 import androidx.annotation.WorkerThread
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MediatorLiveData
 import com.kaloglu.sample.api.ApiEmptyResponse
 import com.kaloglu.sample.api.ApiErrorResponse
 import com.kaloglu.sample.api.ApiResponse

@@ -1,11 +1,11 @@
 package com.kaloglu.sample.injection.module.main
 
-import com.kaloglu.sample.mobileui.demo.DemoFragment
 import com.kaloglu.sample.data.LocalStorage
 import com.kaloglu.sample.injection.module.ActivityModule
 import com.kaloglu.sample.injection.scopes.PerActivity
 import com.kaloglu.sample.injection.scopes.PerFragment
 import com.kaloglu.sample.mobileui.base.BaseActivity
+import com.kaloglu.sample.mobileui.demo.DemoFragment
 import com.kaloglu.sample.mobileui.main.MainActivity
 import com.kaloglu.sample.navigation.ActivityNavigator
 import com.kaloglu.sample.presentation.interfaces.main.MainContract

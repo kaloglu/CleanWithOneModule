@@ -16,9 +16,7 @@
 
 package com.kaloglu.sample.viewobjects
 
-import com.kaloglu.sample.viewobjects.Status.ERROR
-import com.kaloglu.sample.viewobjects.Status.LOADING
-import com.kaloglu.sample.viewobjects.Status.SUCCESS
+import com.kaloglu.sample.viewobjects.Status.*
 
 /**
  * A generic class that holds a value with its loading status.
