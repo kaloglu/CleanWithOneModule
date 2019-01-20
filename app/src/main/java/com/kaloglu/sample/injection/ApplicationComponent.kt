@@ -2,6 +2,7 @@ package com.kaloglu.sample.injection
 
 import android.app.Application
 import com.kaloglu.sample.SampleApp
+import com.kaloglu.sample.injection.firestore.FirestoreModule
 import com.kaloglu.sample.injection.module.ActivityBindingModule
 import com.kaloglu.sample.injection.module.ApplicationModule
 import com.kaloglu.sample.injection.module.PreferencesModule
@@ -22,7 +23,8 @@ import dagger.android.support.AndroidSupportInjectionModule
     ActivityBindingModule::class,
     DataModule::class,
     CacheModule::class,
-    RemoteModule::class
+    RemoteModule::class,
+    FirestoreModule::class
 ])
 interface ApplicationComponent : AndroidInjector<SampleApp> {
 
