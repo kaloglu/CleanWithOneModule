@@ -55,6 +55,8 @@ def versions = [
 
         firebaseAuth        : '4.2.1',
 
+        fireStore           : '17.1.5',
+
         ahBottomNavigation  : '2.3.3',
 
         rxJava              : '2.0.2',
@@ -139,6 +141,7 @@ def libraries = [
         //Firebase
         firebaseCore       : "com.google.firebase:firebase-core:$versions.firebase",
         firebaseAuth       : "com.firebaseui:firebase-ui-auth:$versions.firebaseAuth",
+        fireStore          : "com.google.firebase:firebase-firestore:$versions.fireStore",
 
         //BottomNavigation
         ahBottomNavigation : "com.aurelhubert:ahbottomnavigation:$versions.ahBottomNavigation",
@@ -174,7 +177,7 @@ ext.appDependencies = [
         addDependency('kapt', libraries.daggerCompiler),
         addDependency('kapt', libraries.daggerProcessor),
 
-        //TODO: Data katmanı oluşursa oraya taşınacak
+        //TODO: Data katmanı oluşursa oraya  taşınacak
         addDependency('implementation', libraries.retrofit),
         addDependency('implementation', libraries.retrofitConverter),
         addDependency('implementation', libraries.retrofitAdapter),
@@ -192,6 +195,7 @@ ext.appDependencies = [
 
         addDependency('implementation', libraries.firebaseCore),
         addDependency('implementation', libraries.firebaseAuth),
+        addDependency('implementation', libraries.fireStore),
 
         addDependency('implementation', libraries.ahBottomNavigation),
 
