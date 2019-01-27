@@ -2,6 +2,7 @@ package com.kaloglu.sample.injection.firestore
 
 import com.google.firebase.firestore.CollectionReference
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.FirebaseFirestoreSettings
 import com.kaloglu.sample.injection.scopes.PerApplication
 import dagger.Module
 import dagger.Provides
@@ -14,15 +15,18 @@ internal class FirestoreModule {
     @Provides
     fun providesFirestore(): FirebaseFirestore {
         FirebaseFirestore.setLoggingEnabled(true)
-        return FirebaseFirestore.getInstance()
+        val fireStoreDb = FirebaseFirestore.getInstance()
+        fireStoreDb.firestoreSettings = FirebaseFirestoreSettings.Builder()
+                .setPersistenceEnabled(true)
+                .build()
+        return fireStoreDb
     }
 
     @PerApplication
     @Provides
     @Named("public")
-    fun providesTournaments(): CollectionReference {
-        FirebaseFirestore.setLoggingEnabled(true)
-        return FirebaseFirestore.getInstance().collection("public")
+    fun providesPublic(fireStoreDb: FirebaseFirestore): CollectionReference {
+        return fireStoreDb.collection("public")
     }
 
 }
