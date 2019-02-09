@@ -7,9 +7,5 @@ interface MainContract {
 
     interface View : ActivityView
 
-    interface Presenter : ActivityPresenter<View> {
-        fun getPersonDetail()
-        fun getNextActivity()
-        fun signOut()
-    }
+    interface Presenter : ActivityPresenter<View>
 }

@@ -25,6 +25,7 @@ import com.kaloglu.sample.api.ApiErrorResponse
 import com.kaloglu.sample.api.ApiResponse
 import com.kaloglu.sample.api.ApiSuccessResponse
 import com.kaloglu.sample.presentation.interfaces.base.mvp.BaseView
+import com.kaloglu.sample.presentation.interfaces.base.mvp.ResponseLiveDataView
 import com.kaloglu.sample.viewobjects.Resource
 import com.kaloglu.sample.viewobjects.Status
 import java.util.*
@@ -142,7 +143,7 @@ abstract class NetworkBoundResource<ResultType, RequestType, ParameterType>
 
 
     @Suppress("UNCHECKED_CAST")
-    fun <T> observe(view: BaseView<T>): NetworkBoundResource<ResultType, RequestType, ParameterType> {
+    fun <T> observe(view: ResponseLiveDataView<T>): NetworkBoundResource<ResultType, RequestType, ParameterType> {
         result.observe(view, androidx.lifecycle.Observer {
             when (it?.status) {
                 Status.LOADING -> view.onLoading()

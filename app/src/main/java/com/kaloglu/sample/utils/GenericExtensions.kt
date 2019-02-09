@@ -7,4 +7,10 @@ package com.kaloglu.sample.utils
 internal val String.Companion.empty
     get() = ""
 
+fun <T : Any> Class<T>.checkInjection(any: T?) =
+    checkNotNull(any) {
+        val firstChar = simpleName.first()
+        val firstCharLowerCase = simpleName.replaceFirst(firstChar, firstChar.toLowerCase())
+        "you should add \"$firstCharLowerCase: $simpleName\" to providing Presenter method at Module"
+    }
 

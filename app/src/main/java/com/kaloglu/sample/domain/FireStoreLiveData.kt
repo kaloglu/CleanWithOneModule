@@ -3,7 +3,7 @@ package com.kaloglu.sample.domain
 import androidx.lifecycle.LiveData
 import com.google.firebase.firestore.*
 import com.kaloglu.sample.data.model.BaseModel
-import com.kaloglu.sample.presentation.interfaces.base.mvp.BaseView
+import com.kaloglu.sample.presentation.interfaces.base.mvp.ResponseLiveDataView
 import com.kaloglu.sample.viewobjects.Resource
 import com.kaloglu.sample.viewobjects.Status
 
@@ -45,7 +45,7 @@ class FireStoreLiveData<T : BaseModel>(
                     ?.toList()
 
     @Suppress("UNCHECKED_CAST")
-    fun <T> observe(view: BaseView<T>) {
+    fun <T> observe(view: ResponseLiveDataView<T>) {
         observe(view, androidx.lifecycle.Observer {
             when (it?.status) {
                 Status.LOADING -> view.onLoading()

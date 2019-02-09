@@ -7,7 +7,7 @@ import com.kaloglu.sample.presentation.interfaces.base.mvp.BasePresenter
 import com.kaloglu.sample.presentation.interfaces.base.mvp.BaseView
 import javax.inject.Inject
 
-abstract class BaseMvpFragment<M, P : BasePresenter<M, BaseView<M>>> : BaseFragment(), BaseView<M> {
+abstract class BaseMvpFragment<P : BasePresenter<BaseView>> : BaseFragment(), BaseView {
 
     @Inject
     lateinit var presenter: P

@@ -1,9 +1,11 @@
 package com.kaloglu.sample.navigation
 
 import androidx.fragment.app.FragmentManager
+import com.kaloglu.sample.injection.scopes.PerActivity
 import com.kaloglu.sample.injection.scopes.PerFragment
 import com.kaloglu.sample.mobileui.base.BaseFragment
 
+@PerActivity
 @PerFragment
 abstract class FragmentNavigator constructor(
         private val fragmentManager: FragmentManager,
@@ -15,7 +17,6 @@ abstract class FragmentNavigator constructor(
                     .replace(containerId, fragment)
                     .addToBackStack(fragment.fragmentTag)
                     .commit()
-
 
     fun popBackStack() = fragmentManager.popBackStack()
 

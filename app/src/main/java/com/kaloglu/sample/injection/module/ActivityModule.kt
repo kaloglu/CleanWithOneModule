@@ -7,6 +7,8 @@ import androidx.fragment.app.FragmentManager
 import com.kaloglu.sample.injection.qualifier.ActivityContext
 import com.kaloglu.sample.injection.scopes.PerActivity
 import com.kaloglu.sample.mobileui.base.BaseActivity
+import com.kaloglu.sample.navigation.FragmentNavigator
+import com.kaloglu.sample.presentation.interfaces.base.navigator.BaseFragmentNavigator
 import dagger.Binds
 import dagger.Module
 import dagger.Provides
@@ -16,6 +18,12 @@ abstract class ActivityModule {
 
     @Module
     companion object {
+
+        @JvmStatic
+        @Provides
+        @PerActivity
+        fun fragmentNavigator(fragmentManager: FragmentManager): FragmentNavigator =
+                BaseFragmentNavigator(fragmentManager)
 
         @JvmStatic
         @Provides

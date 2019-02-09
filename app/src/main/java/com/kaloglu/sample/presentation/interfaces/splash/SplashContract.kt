@@ -1,6 +1,7 @@
 package com.kaloglu.sample.presentation.interfaces.splash
 
 import android.content.Intent
+import com.firebase.ui.auth.FirebaseUiException
 import com.kaloglu.sample.presentation.interfaces.activity.mvp.ActivityPresenter
 import com.kaloglu.sample.presentation.interfaces.activity.mvp.ActivityView
 
@@ -11,8 +12,7 @@ interface SplashContract {
     }
 
     interface Presenter : ActivityPresenter<View> {
-        fun getNextActivity()
-        fun getSignInActivity()
         fun checkAuth()
+        fun showError(firebaseUiException: FirebaseUiException)
     }
 }

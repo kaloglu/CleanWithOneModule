@@ -19,23 +19,10 @@ import com.kaloglu.sample.utils.with
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlin.random.Random
 
-
-class MainActivity : BaseMvpActivity<Any, MainContract.Presenter>(), MainContract.View<Any> {
+class MainActivity : BaseMvpActivity<MainContract.Presenter>(), MainContract.View {
 
     private lateinit var adapter: ViewPagerAdapter
     private var currentFragment: DemoFragment? = null
-
-    override fun onLoading() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
-
-    override fun onSuccess(data: Any?) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
-
-    override fun onError(errorMessage: String?, data: Any?) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
 
     override val contentResourceId = R.layout.activity_main
 
@@ -47,14 +34,6 @@ class MainActivity : BaseMvpActivity<Any, MainContract.Presenter>(), MainContrac
     override val containedFragment: BaseFragment? = null
 
     override fun initUserInterface() {
-//        setSupportActionBar(toolbar)
-//        toolbar.title = title
-//
-//        buttonSignOut.setOnClickListener {
-//            AuthUI.getInstance()
-//                    .signOut(this)
-//                    .addOnCompleteListener(presenter.signOut())
-//        }
 
         adapter = ViewPagerAdapter(supportFragmentManager)
         view_pager.offscreenPageLimit = 3
