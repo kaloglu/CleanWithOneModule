@@ -13,6 +13,7 @@ import com.kaloglu.sample.viewobjects.CachedSample
 class SplashActivity : BaseMvpActivity<CachedSample, SplashContract.Presenter>(), SplashContract.View<CachedSample> {
 
     override val contentResourceId = R.layout.activity_splash
+
     override val baseFrameLayoutId = R.id.sign_in_container
 
     override fun initUserInterface() = Unit
@@ -34,14 +35,10 @@ class SplashActivity : BaseMvpActivity<CachedSample, SplashContract.Presenter>()
                         }
                     }
 
-    private fun handleSignInResult(response: IdpResponse?, resultCode: Int) =
-            when {
-                resultCode == Activity.RESULT_OK -> presenter.checkAuth()
-                response == null -> showSnackbar(R.string.sign_in_cancelled)
-                response.error != null -> presenter.showError(response.error!!)
-                else -> Unit
-            }
-
+    override fun handleSignInResult(data: Intent?, resultCode: Int) =
+            when (resultCode) {
+                Activity.RESULT_OK -> presenter.checkAuth()
+                else -> finish()
 
     override fun onPresenterAttached() = presenter.checkAuth()
 

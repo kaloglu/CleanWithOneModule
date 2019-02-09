@@ -4,16 +4,19 @@ import com.firebase.ui.auth.ErrorCodes
 import com.firebase.ui.auth.FirebaseUiException
 import com.google.firebase.auth.FirebaseAuth
 import com.kaloglu.sample.R
-import com.kaloglu.sample.mobileui.base.mvp.BaseAbstractPresenter
+import com.kaloglu.sample.mobileui.base.mvp.ActivityAbstractPresenter
 import com.kaloglu.sample.navigation.ActivityNavigator
 import com.kaloglu.sample.presentation.interfaces.splash.SplashContract
-import com.kaloglu.sample.viewobjects.CachedSample
 import javax.inject.Inject
 
 class SplashPresenter @Inject constructor(
         private val firebaseAuth: FirebaseAuth,
-        activityNavigator: ActivityNavigator
-) : BaseAbstractPresenter<CachedSample, SplashContract.View<CachedSample>>(activityNavigator), SplashContract.Presenter {
+        val activityNavigator: ActivityNavigator
+): ActivityAbstractPresenter<SplashContract.View>(), SplashContract.Presenter {
+
+    override fun getSignInActivity() {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
 
     override fun checkAuth() =
             when  {

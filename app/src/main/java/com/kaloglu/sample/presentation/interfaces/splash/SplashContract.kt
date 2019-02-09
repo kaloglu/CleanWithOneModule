@@ -1,16 +1,18 @@
 package com.kaloglu.sample.presentation.interfaces.splash
 
-import com.firebase.ui.auth.FirebaseUiException
-import com.kaloglu.sample.presentation.interfaces.base.mvp.BasePresenter
-import com.kaloglu.sample.presentation.interfaces.base.mvp.BaseView
-import com.kaloglu.sample.viewobjects.CachedSample
+import android.content.Intent
+import com.kaloglu.sample.presentation.interfaces.activity.mvp.ActivityPresenter
+import com.kaloglu.sample.presentation.interfaces.activity.mvp.ActivityView
 
 interface SplashContract {
 
-    interface View<M> : BaseView<M>
+    interface View : ActivityView {
+        fun handleSignInResult(data: Intent?, resultCode: Int)
+    }
 
-    interface Presenter : BasePresenter<CachedSample, View<CachedSample>> {
+    interface Presenter : ActivityPresenter<View> {
+        fun getNextActivity()
+        fun getSignInActivity()
         fun checkAuth()
-        fun showError(error: FirebaseUiException)
     }
 }

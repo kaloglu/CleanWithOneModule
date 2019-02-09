@@ -5,7 +5,7 @@ import androidx.annotation.ColorRes
 import androidx.annotation.StringRes
 
 interface FormContract {
-    interface FormView<in T> : BaseView<T> {
+    interface FormView<in T> : BaseView, ResponseLiveDataView<T> {
 
         var submitButtonView: View
 

@@ -1,14 +1,15 @@
 package com.kaloglu.sample.presentation.interfaces.main
 
-import com.google.android.gms.tasks.OnCompleteListener
-import com.kaloglu.sample.presentation.interfaces.base.mvp.BasePresenter
-import com.kaloglu.sample.presentation.interfaces.base.mvp.BaseView
+import com.kaloglu.sample.presentation.interfaces.activity.mvp.ActivityPresenter
+import com.kaloglu.sample.presentation.interfaces.activity.mvp.ActivityView
 
 interface MainContract {
 
-    interface View<M> : BaseView<M>
+    interface View : ActivityView
 
-    interface Presenter : BasePresenter<Any, View<Any>> {
-        fun signOut(): OnCompleteListener<Void>
+    interface Presenter : ActivityPresenter<View> {
+        fun getPersonDetail()
+        fun getNextActivity()
+        fun signOut()
     }
 }
