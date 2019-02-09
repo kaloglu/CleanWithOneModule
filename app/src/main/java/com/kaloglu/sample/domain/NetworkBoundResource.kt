@@ -24,7 +24,6 @@ import com.kaloglu.sample.api.ApiEmptyResponse
 import com.kaloglu.sample.api.ApiErrorResponse
 import com.kaloglu.sample.api.ApiResponse
 import com.kaloglu.sample.api.ApiSuccessResponse
-import com.kaloglu.sample.presentation.interfaces.base.mvp.BaseView
 import com.kaloglu.sample.presentation.interfaces.base.mvp.ResponseLiveDataView
 import com.kaloglu.sample.viewobjects.Resource
 import com.kaloglu.sample.viewobjects.Status
@@ -39,10 +38,10 @@ import java.util.*
  * @param <ResultType>
  * @param <RequestType>
 </RequestType></ResultType> */
-abstract class NetworkBoundResource<ResultType, RequestType, ParameterType>
+abstract class NetworkBoundResource<ResultType, RequestType, ParameterType : Any>
 @MainThread constructor(open val executorFactory: ExecutorFactory) {
 
-    abstract var param: Param<ParameterType?>
+    abstract var requestParam: ParameterType
 
     private val resultMerger = MediatorLiveData<Resource<ResultType>>()
 
@@ -103,7 +102,7 @@ abstract class NetworkBoundResource<ResultType, RequestType, ParameterType>
         }
     }
 
-     fun addSuccessSourceFetchedCache(response: ApiSuccessResponse<RequestType>) {
+    fun addSuccessSourceFetchedCache(response: ApiSuccessResponse<RequestType>) {
         executorFactory.diskIO().execute {
             saveCallResult(processResponse(response))
             executorFactory.mainThread().execute {
@@ -156,11 +155,9 @@ abstract class NetworkBoundResource<ResultType, RequestType, ParameterType>
         return this
     }
 
-    open fun setParam(value: ParameterType): NetworkBoundResource<ResultType, RequestType, ParameterType> {
-        param = Param(value)
+    open fun setRequestParam(request: ParameterType): NetworkBoundResource<ResultType, RequestType, ParameterType> {
+        requestParam = request
         return this
     }
-
-    data class Param<ParameterType>(var value: ParameterType)
 }
 
